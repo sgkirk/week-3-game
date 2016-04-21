@@ -5,7 +5,7 @@ var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l
 var wins = 0;
 var losses = 0;
 var left = 10;
-var guessed = "";
+var guessed = [];
 
 
 // When the user presses the key it records the keypress and then sets it to userguess
@@ -21,9 +21,8 @@ document.onkeyup = function(event) {
 
         // It tests to determine if the computer or the user won the round and then increments 
         if (userGuess == computerGuess){
-            wins++; guessed.push(userGuess);
-        }
-        else{losses++;
+            wins++; 
+        }else {left = (left-1); guessed.push(userGuess);
         }
 
 
